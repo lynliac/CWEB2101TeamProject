@@ -29,6 +29,26 @@
     font-weight: 400;
     margin-bottom: 30px;
   }  
+  .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+  }
   .jumbotron {
     background-color: #f4511e;
     color: #fff;
@@ -208,7 +228,7 @@
         <li><a href="#portfolio">PORTFOLIO</a></li>
         <li><a href="#pricing">PRICING</a></li>
         <li><a href="#about">ABOUT</a></li>
-        <li><a href="#contact">CONTACT</a></li>
+        <li><a href="#support">SUPPORT</a></li>
         
       </ul>
     </div>
@@ -420,9 +440,9 @@
   </div>
 </div>
 
-<!-- Container (Contact Section) -->
+<!-- Container (Support Section) -->
 <div id="contact" class="container-fluid bg-grey">
-  <h2 class="text-center">CONTACT</h2>
+  <h2 class="text-center">SUPPORT</h2>
   <div class="row">
     <div class="col-sm-5">
       <p>Contact us and we'll get back to you within 24 hours.</p>
@@ -447,6 +467,22 @@
       </div>
     </div>
   </div>
+</div>
+<h2 class="text-center">FAQ'S</h2>
+
+<button class="accordion">How do I find a recipe?</button>
+<div class="panel">
+  <p></p>
+</div>
+
+<button class="accordion">How do I update my dietary restrictions?</button>
+<div class="panel">
+  <p>Text</p>
+</div>
+
+<button class="accordion">How do I place an online order?</button>
+<div class="panel">
+  <p>Text</p>
 </div>
 
 <footer class="container-fluid text-center">
@@ -497,6 +533,21 @@ function subButton() {
 
 function supportButton() {
   alert("Thank you! We will get back to you within 24 hours of receiving your inquiry");
+}
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+for (i=0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
 }
 </script>
 
