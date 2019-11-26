@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <style>
@@ -49,6 +50,43 @@
     display: none;
     overflow: hidden;
   }
+  * {
+  box-sizing: border-box;
+}
+
+/* Style the search field */
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
   .jumbotron {
     background-color: #f4511e;
     color: #fff;
@@ -240,10 +278,10 @@
   <p>We bring the restaurant to your kitchen</p> 
   <form>
     <div class="input-group">
-      <input type="email" class="form-control" size="10" placeholder="Email Address" required>
-      <div class="input-group-btn">
-        <button onClick="subButton()" type="button" class="btn btn-danger">Subscribe</button>
-      </div>
+        <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+          <input type="text" placeholder="Search.." name="search2">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
     </div>
   </form>
 </div>
@@ -477,7 +515,7 @@
 
 <button class="accordion">How do I update my dietary restrictions?</button>
 <div class="panel">
-  <p>Text</p>
+  <p></p>
 </div>
 
 <button class="accordion">How do I place an online order?</button>
@@ -486,10 +524,12 @@
 </div>
 
 <footer class="container-fluid text-center">
+  <button onClick="subButton()" type="button" class="btn btn-danger">Subscribe</button>
   <a href="#myPage" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
 </footer>
+
 
 <script>
 $(document).ready(function(){
